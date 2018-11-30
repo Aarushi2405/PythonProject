@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>Leaderboard</title>
+		<style type="text/css">a{text-decoration:none}</style>
+	</head>
+	<body>
+		<h2>Leaderboard</h2>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<div class="w3-container">
+			<div class="w3-bar w3-white w3-border w3-border-green w3-round-large w3-large">
+				<a href="dashboard" class="w3-bar-item w3-button w3-hover-green" target="_self">Dashboard</a>
+				<a href="profile" class="w3-bar-item w3-button w3-hover-green" target="_self">Profile</a>
+				<a href="leaderboard" class="w3-bar-item w3-button w3-hover-green" target="_self">Leaderboard</a>
+				<a href="login" class="w3-bar-item w3-button w3-right w3-hover-green" target="_self">Logout</a>
+				<a href="leaderboard2" class="w3-bar-item w3-button w3-hover-green" target="_self">Overall Leaderboard</a>
+				</div>
+		</div>
+        <br><br><br>
+				<style>
+				table {
+						font-family: arial, sans-serif;
+						border-collapse: collapse;
+						width: 100%;
+				}
+				td, th {
+						border: 1px solid #dddddd;
+						text-align: left;
+						padding: 10px;
+				}
+				tr:nth-child(even) {
+						background-color: #dddddd;
+				}
+				</style>
+		{% for s in m %}
+			<h3 align="center"> <b>{{ s }}</b></h3>
+			<table>
+				<tr> {% for i in range(4) %}
+					<th> {{column[i]}} </th>
+					{% endfor %}
+				</tr>
+			{% for a in m[s] %}
+
+        <tr>
+						<td width ="25%"> {{m[s].index(a)+1}} </td>
+				{% for row in a%}
+        	<td width = "25%">{{ row }}</td>
+				{% endfor %}
+        </tr>
+			{% endfor %}
+			</table>
+		{% endfor %}
+	</body>
+</html>

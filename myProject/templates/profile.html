@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<title>Profile</title>
+		<style type="text/css">a{text-decoration:none}</style>
+	</head>
+	<body>
+		<h2>Profile</h2>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<div class="w3-container">
+			<div class="w3-bar w3-white w3-border w3-border-green w3-round-large w3-large">
+				<a href="dashboard" class="w3-bar-item w3-button w3-hover-green" target="_self">Dashboard</a>
+				<a href="profile" class="w3-bar-item w3-button w3-hover-green" target="_self">Profile</a>
+				<a href="leaderboard" class="w3-bar-item w3-button w3-hover-green" target="_self">Leaderboard</a>
+				<a href="leaderboard2" class="w3-bar-item w3-button w3-hover-green" target="_self">Overall Leaderboard</a>
+				<a href="login" class="w3-bar-item w3-button w3-right w3-hover-green" target="_self">Logout</a>
+  			</div>
+  			<br>
+  			<a href="edit_profile" class="w3-button w3-right w3-green w3-hover-green w3-round-large w3-large" target="_self">Edit profile</a>
+		</div>
+		<h3><i>&nbspAbout me</i><h3>
+      <br>
+      <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td, th {
+      	border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+      }
+      tr:nth-child(even) {
+      	background-color: #dddddd;
+      }
+    	</style>
+    	<table>
+				<tr>
+					<td><b>Name</b></td>
+					<td>{{ about_me[0] }}</td>
+				</tr>
+				<tr>
+					<td><b>Username</b></td>
+					<td>{{ about_me[1] }}</td>
+				</tr>
+				<tr>
+					<td><b>Email Id</b></td>
+					<td>{{ about_me[2] }}</td>
+				</tr>
+				<tr>
+					<td><b>Age</b></td>
+					<td>{{ about_me[3] }}</td>
+				</tr>
+				<tr>
+					<td><b>Favorite cartoon character</b></td>
+					<td>{{ about_me[4] }}</td>
+				</tr>
+				<tr>
+					<td><b>Rank</b></td>
+					<td>{{ about_me[5] }}</td>
+				</tr>
+				<tr>
+					<td><b>Number of Quizzes attempted</b></td>
+					<td>{{ about_me[6] }}</td>
+				</tr>
+      </table>
+			<br><br>
+    <h3><i>&nbspCurrent Status</i></h3>
+			<br>
+			<style>
+    	table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+      	width: 100%;
+      }
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+      }
+      tr:nth-child(even) {
+      	background-color: #dddddd;
+      }
+			</style>
+			<table>
+        <tr>
+        	<th>Quizzes attempted</th>
+          <th>Score</th>
+        	<th>Time</th>
+        </tr>
+				{% for row in rows %}
+				<tr>
+          <td>{{ row[0] }}</td>
+          <td>{{ row[1] }}</td>
+        	<td>{{ row[2] }}</td>
+        </tr>
+      	{% endfor %}
+ 			</table>
+	</body>
+</html>
